@@ -1,4 +1,4 @@
-# 🧬 Genetik Algoritma ile Numune Karışımı Optimizasyonu
+# Genetik Algoritma ile Numune Karışımı Optimizasyonu
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -8,7 +8,7 @@ Bu proje, **Yapay Zeka Sistemleri** dersi kapsamında geliştirilmiş bir optimi
 
 ---
 
-## 👨‍💻 Öğrenci Bilgileri
+## Öğrenci Bilgileri
 
 | **Ad Soyad** | **Okul No** | **Bölüm** |
 |:---:|:---:|:---:|
@@ -16,11 +16,11 @@ Bu proje, **Yapay Zeka Sistemleri** dersi kapsamında geliştirilmiş bir optimi
 
 ---
 
-## 📌 Problem Tanımı (Senaryo 7)
+## Problem Tanımı (Senaryo 7)
 
 Bir biyoteknoloji firması, test hassasiyetini maksimize etmek için iki reaktifin (A ve B) ideal karışım oranlarını aramaktadır.
 
-### 📐 Matematiksel Model
+### Matematiksel Model
 **Amaç Fonksiyonu (Maximize):**
 $$y = 3x_1 + 2x_2 + x_1x_2 - 0.5x_2^2$$
 
@@ -34,7 +34,7 @@ $$y = 3x_1 + 2x_2 + x_1x_2 - 0.5x_2^2$$
 
 ---
 
-## ⚙️ Kullanılan Yöntem ve Teknoloji
+## Kullanılan Yöntem ve Teknoloji
 
 Proje **Python** dilinde geliştirilmiş olup, çözüm için evrimsel hesaplama tekniği olan **Genetik Algoritma** kullanılmıştır.
 
@@ -46,14 +46,14 @@ Proje **Python** dilinde geliştirilmiş olup, çözüm için evrimsel hesaplama
 * **Mutasyon:** Rastgele Değer Değişimi (Oran: 0.2)
 * **Ceza Yöntemi (Penalty):** Kısıtları (Toplam > 100) ihlal eden bireylerin fitness puanı düşürülerek elenmesi sağlanmıştır.
 
-### 📚 Kullanılan Kütüphaneler
+### Kullanılan Kütüphaneler
 * `NumPy` & `Pandas`: Veri işleme ve hesaplama.
 * `Matplotlib` & `Seaborn`: 2D ve 3D görselleştirme.
 * `Tqdm`: Algoritma ilerleme çubuğu (Progress bar).
 
 ---
 
-## 📊 Proje Çıktıları ve Görselleştirme
+## Proje Çıktıları ve Görselleştirme
 
 Algoritma çalıştırıldığında, problem uzayını tarayarak global maksimum noktasına yakınsar. Aşağıda projenin çalışma anından alınan sonuç paneli görülmektedir:
 
@@ -71,7 +71,7 @@ Simülasyon sonucunda algoritma şu değerlere yakınsamıştır:
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma (Google Colab)
+## Kurulum ve Çalıştırma (Google Colab)
 
 Bu proje bulut tabanlı **Google Colab** üzerinde çalıştırılmak üzere tasarlanmıştır.
 
