@@ -57,7 +57,7 @@ Proje **Python** dilinde geliştirilmiş olup, çözüm için evrimsel hesaplama
 
 Algoritma çalıştırıldığında, problem uzayını tarayarak global maksimum noktasına yakınsar. Aşağıda projenin çalışma anından alınan sonuç paneli görülmektedir:
 
-![Simülasyon Sonuçları](sonuc_ekrani.png)
+[![Sonuç](https://i.postimg.cc/d3kXJFGj/indir.png)](https://postimg.cc/FkvGx2WY)
 
 ### Elde Edilen En İyi Sonuçlar:
 Simülasyon sonucunda algoritma şu değerlere yakınsamıştır:
