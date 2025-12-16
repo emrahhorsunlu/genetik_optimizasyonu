@@ -46,6 +46,7 @@ Algoritma 80 jenerasyon sonunda optimum noktaya yakınsamıştır.
 Aşağıdaki grafikte algoritmanın başarımı, karışım oranları ve çözüm uzayı görülmektedir:
 
 ![Proje Çıktısı](sonuc_grafigi.png)
+
 *(Not: Bu görseli projeyi çalıştırdıktan sonra GitHub'a yüklemelisiniz)*
 
 ---
