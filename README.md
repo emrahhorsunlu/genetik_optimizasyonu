@@ -1,85 +1,56 @@
-# Genetik Algoritma ile Numune Karışımı Optimizasyonu
+# 🧬 Genetik Algoritma ile Numune Karışımı Optimizasyonu
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+![Status](https://img.shields.io/badge/Durum-Tamamlandı-success) ![Python](https://img.shields.io/badge/Python-3.x-blue)
 
-Bu proje, **Yapay Zeka Sistemleri** dersi kapsamında geliştirilmiş bir optimizasyon projesidir. **Senaryo 7** baz alınarak, bir biyoteknoloji laboratuvarındaki test çözeltilerinin en verimli karışım oranları **Genetik Algoritma (GA)** kullanılarak hesaplanmıştır.
+Bu proje, **Yapay Zeka Sistemleri** dersi için hazırlanmıştır. **Senaryo 7**'deki biyoteknoloji problemi, Genetik Algoritma kullanılarak modellenmiş ve çözülmüştür.
 
----
-
-## Öğrenci Bilgileri
-
-| **Ad Soyad** | **Okul No** | **Bölüm** |
-|:---:|:---:|:---:|
-| Emrah Horsunlu | 2012729007 | Bilgisayar Mühendisliği |
+## 👨‍💻 Öğrenci Bilgileri
+* **Ad Soyad:** Emrah Horsunlu
+* **Öğrenci No:** 2012729007
+* **Senaryo:** 7 (Numune Karışımı)
 
 ---
 
-## Problem Tanımı (Senaryo 7)
+## 📌 Problem Tanımı
+Bir laboratuvar, test hassasiyetini ($y$) maksimize etmek için iki reaktifin ($x_1, x_2$) ideal karışım oranını aramaktadır.
 
-Bir biyoteknoloji firması, test hassasiyetini maksimize etmek için iki reaktifin (A ve B) ideal karışım oranlarını aramaktadır.
-
-### Matematiksel Model
-**Amaç Fonksiyonu (Maximize):**
-$$y = 3x_1 + 2x_2 + x_1x_2 - 0.5x_2^2$$
-
-**Değişkenler:**
-* **$x_1$**: Reaktif A Oranı (%)
-* **$x_2$**: Reaktif B Oranı (%)
-
-**Kısıtlar:**
-1.  **Toplam Kısıtı:** $x_1 + x_2 \le 100$ (Toplam karışım %100'ü geçemez)
-2.  **Alt Sınır:** $x_1 \ge 25$ (Reaktif A en az %25 olmalıdır)
+* **Amaç Fonksiyonu:** $y = 3x_1 + 2x_2 + x_1x_2 - 0.5x_2^2$
+* **Kısıtlar:**
+    1.  $x_1 + x_2 \le 100$ (Toplam %100'ü aşamaz)
+    2.  $x_1 \ge 25$ (Reaktif A en az %25 olmalı)
 
 ---
 
-## Kullanılan Yöntem ve Teknoloji
+## ⚙️ Kullanılan Algoritma ve Yöntemler
+Projede Python dili ve aşağıdaki Genetik Algoritma bileşenleri kullanılmıştır:
 
-Proje **Python** dilinde geliştirilmiş olup, çözüm için evrimsel hesaplama tekniği olan **Genetik Algoritma** kullanılmıştır.
-
-### Algoritma Parametreleri
-* **Popülasyon Büyüklüğü:** 100 Birey
-* **Jenerasyon Sayısı:** 100
-* **Seçim Yöntemi:** Turnuva Seçimi (Tournament Selection)
-* **Çaprazlama (Crossover):** Aritmetik Çaprazlama
-* **Mutasyon:** Rastgele Değer Değişimi (Oran: 0.2)
-* **Ceza Yöntemi (Penalty):** Kısıtları (Toplam > 100) ihlal eden bireylerin fitness puanı düşürülerek elenmesi sağlanmıştır.
-
-### Kullanılan Kütüphaneler
-* `NumPy` & `Pandas`: Veri işleme ve hesaplama.
-* `Matplotlib` & `Seaborn`: 2D ve 3D görselleştirme.
-* `Tqdm`: Algoritma ilerleme çubuğu (Progress bar).
+1.  **Kodlama:** Gerçel Değerli Kodlama (Real-valued encoding).
+2.  **Seçilim:** Turnuva Seçimi (Tournament Selection).
+3.  **Çaprazlama:** Aritmetik Çaprazlama (İki genin ağırlıklı ortalaması).
+4.  **Mutasyon:** Rastgele gürültü ekleme (%20 oranında).
+5.  **Ceza Yöntemi (Penalty):** Kısıtları ihlal eden (toplamı 100'ü geçen) bireylere çok düşük puan verilerek elenmeleri sağlanmıştır.
 
 ---
 
-## Proje Çıktıları ve Görselleştirme
+## 📊 Sonuçlar ve Görselleştirme
+Algoritma 80 jenerasyon sonunda optimum noktaya yakınsamıştır.
 
-Algoritma çalıştırıldığında, problem uzayını tarayarak global maksimum noktasına yakınsar. Aşağıda projenin çalışma anından alınan sonuç paneli görülmektedir:
-
-[![Sonuç](https://i.postimg.cc/d3kXJFGj/indir.png)](https://postimg.cc/FkvGx2WY)
-
-### Elde Edilen En İyi Sonuçlar:
-Simülasyon sonucunda algoritma şu değerlere yakınsamıştır:
-
-| Parametre | Bulunan Değer (%) | Açıklama |
+| Parametre | Bulunan Değer | Açıklama |
 |---|---|---|
-| **Reaktif A ($x_1$)** | **%66.81** | Alt sınır kısıtına uygun |
+| **Reaktif A ($x_1$)** | **%66.81** | Optimize edilmiş değer |
 | **Reaktif B ($x_2$)** | **%33.16** | Optimize edilmiş değer |
-| **Toplam Karışım** | **%99.97** | $x_1 + x_2 \le 100$ kısıtı sağlandı |
-| **Maksimum Skor** | **1932.25** | Test Hassasiyeti (Maximize Edildi) |
+| **Toplam Karışım** | **%99.97** | Kısıt sağlandı ($ \le 100$) |
+| **Maksimum Skor** | **1932.25** | Hedeflenen en yüksek hassasiyet |
+
+### Grafik Analizi
+Aşağıdaki grafikte algoritmanın başarımı, karışım oranları ve çözüm uzayı görülmektedir:
+
+![Proje Çıktısı](sonuc_grafigi.png)
+*(Not: Bu görseli projeyi çalıştırdıktan sonra GitHub'a yüklemelisiniz)*
 
 ---
 
-## Kurulum ve Çalıştırma (Google Colab)
-
-Bu proje bulut tabanlı **Google Colab** üzerinde çalıştırılmak üzere tasarlanmıştır.
-
-1.  Repodaki `.ipynb` dosyasını indirin veya açın.
-2.  Google Colab'e yükleyin.
-3.  Tüm hücreleri sırasıyla çalıştırın (`Runtime` > `Run all`).
-4.  Sonuç dashboard'u en alt hücrede otomatik olarak belirecektir.
-
----
-
-Bu proje [Emrah Horsunlu](https://github.com/emrahhorsunlu) tarafından hazırlanmıştır.
+## 🚀 Kurulum
+1.  Bu repoyu klonlayın.
+2.  `.ipynb` dosyasını Google Colab veya Jupyter Notebook ile açın.
+3.  Tüm hücreleri çalıştırın.
